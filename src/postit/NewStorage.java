@@ -1,41 +1,45 @@
 package postit;
 
-import java.util.Arrays;
+
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.*;
+import java.util.HashMap;
 
-public class NewStorage {
+class NewStorage extends NoteInfomation {
 
-	Scanner input = new Scanner(System.in);
-	String[] array = new String[5];
-	
-	
-	
+
+	Scanner inputID = new Scanner(System.in);
+
+
+    HashMap<String, String> Note = new HashMap<String, String>();
+
+
+
 	public void printinfo(){
-	
 	System.out.println("--- Fill note here  ---");
-		}
+                           }
 	
 	public void Notestore(){
-		
-			System.out.print("Enter your note " + (i+1) + " : ");
-		     array[5] = input.nextLine();
-		        break;
-		
-							}
-	
-	
-							
-	
-	
-	public void PrintNotes(){
-		
-		for (int i = 0; i < array.length; i++) {
-			System.out.print("My friend " + (i+1) + " : ");
-		        System.out.print(array[i] + "\n");
-		}
-				
+
+		System.out.println("Enter the note ID you wish to attach the note with\n\n");
+        inputIDnote = inputID.nextLine();
+        System.out.println("Enter your note\n\n");
+        noteDescription = inputID.nextLine();
+        Note.put(inputIDnote, noteDescription );
+	}
+
+    public void PrintNotes(){
+
+	    System.out.println("Please Enter the ID of the note you wish to view");
+        String value = inputID.nextLine();
+	    Note.get(inputIDnote);
+        System.out.println(": " + inputIDnote + noteDescription );
+        Note.clear();
+
+
+        }
+
 	}
 	
 	
-}
+
