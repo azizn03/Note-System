@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 class NewStorage  {
 
-    Scanner inputID = new Scanner(System.in);   // Used for string inputs
-    Scanner inputID2 = new Scanner(System.in);  // Used for integer inputs
+
+
 
 
     ArrayList<Note> NoteArray = new ArrayList<Note>(20);
@@ -18,9 +18,9 @@ class NewStorage  {
     public void Notestore() {
 
         System.out.println("Enter the note ID you wish to attach the note with\n\n");
-        String inputIDnote = inputID.nextLine();
+        String inputIDnote = Postit.menu.nextLine();
         System.out.println("Enter your note\n\n");
-        String noteDescription = inputID.nextLine();
+        String noteDescription = Postit.menu.nextLine();
         NoteArray.add(new Note(inputIDnote, noteDescription));
     }
 
@@ -32,14 +32,13 @@ class NewStorage  {
         for (int i = 0 ; i < NoteArray.size(); i++) {
             System.out.println((count++) + ": "  + NoteArray.get(i).inputIDnote);
         }
-}
-
-    public void printNotes(){
-        int count = inputID2.nextInt();
-
-            System.out.println(count + " " + NoteArray.get(count));
     }
 
+    public void printNotes(){
+
+        int count = Postit.menu.nextInt();
+        Postit.menu.nextLine();
+
+        System.out.println(count + " " + NoteArray.get(count));
+    }
 }
-
-

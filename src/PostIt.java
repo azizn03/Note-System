@@ -3,7 +3,7 @@ package postit;
 import java.util.Scanner;
 
 class Postit {
-
+    public static Scanner menu = new Scanner(System.in);
     public static void main(String[] args) {
         int MenuOption = 0;
 
@@ -11,8 +11,9 @@ class Postit {
 
 
 
-
         while(MenuOption != 3){
+
+
 
             System.out.println(
 
@@ -23,10 +24,8 @@ class Postit {
                             "3.   Close Program\n" +
                             "----------------------------\n");
 
-
-            Scanner menu = new Scanner(System.in);
             MenuOption = menu.nextInt();
-
+            menu.nextLine();
 
             switch (MenuOption) {
 
