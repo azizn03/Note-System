@@ -12,7 +12,7 @@ class Note {
     }
     @Override
     public String toString() {
-        return "ID: " + inputIDnote + ", \n\nDescription: " + noteDescription;
+        return "ID: " + inputIDnote + " \n\nDescription: " + noteDescription;
     }
 
 }
