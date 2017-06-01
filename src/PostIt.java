@@ -3,17 +3,15 @@ package postit;
 import java.util.Scanner;
 
 class Postit {
-    public static Scanner menu = new Scanner(System.in);
-    public static void main(String[] args) {
+
+    public static final Scanner menu = new Scanner(System.in);
+    public static void main(String[] args) throws Exception {
+
         int MenuOption = 0;
 
-        NewStorage G = new NewStorage();    // Case 1 Object
-
-
+        NewStorage G = new NewStorage();    // Allows to use fuctions from NewStorage.java file
 
         while(MenuOption != 3){
-
-
 
             System.out.println(
 
@@ -22,6 +20,9 @@ class Postit {
                             "1.   Create a Note \n" +
                             "2.   View Notes \n" +
                             "3.   Close Program\n" +
+                            "4.   Export notes to File\n" +
+                            "5.   Import notes from file\n" +
+                            "6.   Test code\n" +
                             "----------------------------\n");
 
             MenuOption = menu.nextInt();
@@ -45,12 +46,33 @@ class Postit {
 
                 case 3:
 
-                    System.out.println("Program is closing");
+                    System.out.println("Closing program now.. ");
                     System.exit(0);
+
 
                     break;
 
-                default:
+                case 4:
+
+
+                    G.writeFile();
+
+
+                    System.out.println("Notes have been exported.");
+                    break;
+
+                case 5:
+
+                    G.readFile();
+                    System.out.println("Notes have been imported");
+                    break;
+
+                case 6:
+
+                    G.Gsontest();
+                    break;
+
+               default:
 
                     System.out.println("Invalid choice.");
 
